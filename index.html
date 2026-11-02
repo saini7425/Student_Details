@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Details </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>E-Learning Student Portal</header>
+
+  <main>
+    <section class="card">
+      <h1>Student details</h1>
+      <p class="sub">Fill in your details to register for a course.</p>
+
+      <form id="studentForm" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="e.g. Riya Sharma">
+          <div class="error" data-for="name"></div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="name@example.com">
+          <div class="error" data-for="email"></div>
+        </div>
+
+        <div class="field">
+          <label for="dob">Date of birth</label>
+          <input id="dob" name="dob" type="date">
+          <div class="error" data-for="dob"></div>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" placeholder="10-digit mobile number">
+          <div class="error" data-for="phone"></div>
+        </div>
+
+        <div class="field">
+          <label for="course">Course</label>
+          <select id="course" name="course">
+            <option value="">Select a course</option>
+            <option>Java Programming</option>
+            <option>Web Development</option>
+            <option>Database Management</option>
+            <option>Data Structures</option>
+            <option>Operating Systems</option>
+          </select>
+          <div class="error" data-for="course"></div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn-cancel" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn-submit">Submit</button>
+        </div>
+      </form>
+
+      <div id="message" role="status"></div>
+
+      <div id="summary">
+        <h2>Submitted details</h2>
+        <dl id="summaryList"></dl>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

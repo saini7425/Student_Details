@@ -1,0 +1,137 @@
+:root {
+  --ink: #1d2a3a;
+  --muted: #5f6f82;
+  --paper: #f3f6fa;
+  --card: #ffffff;
+  --line: #d3dce6;
+  --brand: #1f5fbf;
+  --danger: #b3261e;
+  --ok: #1c7c4d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+header {
+  background: var(--ink);
+  color: #fff;
+  padding: 18px 24px;
+  font-size: 1.2rem;
+}
+
+main {
+  max-width: 520px;
+  margin: 28px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px;
+}
+
+h1 { margin: 0 0 4px; font-size: 1.5rem; }
+.sub { margin: 0 0 24px; color: var(--muted); }
+
+.field { margin-bottom: 18px; }
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: .95rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+  color: var(--ink);
+}
+
+input:focus, select:focus, button:focus-visible {
+  outline: 3px solid #9cc0f2;
+  border-color: var(--brand);
+}
+
+.invalid { border-color: var(--danger); }
+
+.error {
+  color: var(--danger);
+  font-size: .85rem;
+  min-height: 1.1em;
+  margin-top: 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-submit { background: var(--brand); color: #fff; }
+.btn-submit:hover { background: #174c98; }
+
+.btn-cancel {
+  background: #fff;
+  color: var(--danger);
+  border-color: var(--danger);
+}
+.btn-cancel:hover { background: #fdecea; }
+
+#message {
+  display: none;
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: 6px;
+}
+#message.ok {
+  display: block;
+  background: #e5f5ec;
+  color: var(--ok);
+  border: 1px solid #b6e0c8;
+}
+#message.info {
+  display: block;
+  background: #eef2f7;
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+#summary { display: none; margin-top: 22px; }
+#summary h2 { font-size: 1.1rem; margin: 0 0 10px; }
+#summary dl {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 6px 12px;
+  margin: 0;
+}
+#summary dt { color: var(--muted); }
+#summary dd { margin: 0; font-weight: 600; word-break: break-word; }
+
+@media (max-width: 480px) {
+  .actions { flex-direction: column-reverse; }
+  #summary dl { grid-template-columns: 1fr; }
+}
